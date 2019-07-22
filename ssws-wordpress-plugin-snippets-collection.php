@@ -213,10 +213,10 @@ class SSWSFunctions
             'id' => 'sswsfnct-bar-powered-by',
             'parent' => 'sswsfnct-bar',
             'class' => '',
+            'title' => __('Powered by Sea to Sky Web Solutions', 'ssws-wordpress-plugin-snippets-collection'), // Text will be shown on hovering
             'href' => 'https://www.seatoskywebsolutions.ca/',
             'meta' => array(
                 'target' => '_blank',
-                'title' => __('Powered by Sea to Sky Web Solutions', 'ssws-wordpress-plugin-snippets-collection'), // Text will be shown on hovering
             ),
         ));
 
