@@ -1,6 +1,6 @@
 # SSWS WordPress Plugin Snippets Collection
 
-This is a WordPress plugin that collects useful snippets to enanche hidden/secret WP functionalty 
+This is a WordPress plugin that collects useful snippets to enhance hidden/secret WP functionalty 
 
 ## Getting Started
 
