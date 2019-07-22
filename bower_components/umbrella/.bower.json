@@ -1,0 +1,36 @@
+{
+  "name": "umbrella",
+  "version": "2.10.1",
+  "homepage": "http://umbrellajs.com/",
+  "authors": [
+    "Francisco Presencia <public@francisco.io>"
+  ],
+  "description": "Lightweight and intuitive javascript library",
+  "main": "umbrella.min.js",
+  "keywords": [
+    "umbrella",
+    "js",
+    "selector",
+    "ajax",
+    "small",
+    "tiny",
+    "jquery",
+    "alternative"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "package.json"
+  ],
+  "_release": "2.10.1",
+  "_resolution": {
+    "type": "version",
+    "tag": "2.10.1",
+    "commit": "4e9a9420725e478acb6f66c71e6d7da3a57f99ad"
+  },
+  "_source": "https://github.com/umbrellajs/umbrella.git",
+  "_target": "^2.9.0",
+  "_originalSource": "umbrella"
+}
