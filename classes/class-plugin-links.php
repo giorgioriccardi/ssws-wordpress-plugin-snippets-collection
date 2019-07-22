@@ -8,7 +8,7 @@ class SSWSFNCT_Plugin_Links
      */
     public function setup()
     {
-        add_filter('plugin_action_links_ssws-functions/ssws-wordpress-plugin-snippets-collection.php', array($this, 'add_links'));
+        add_filter('plugin_action_links_ssws_functions/ssws-wordpress-plugin-snippets-collection.php', array($this, 'add_links'));
     }
 
     /**

@@ -15,6 +15,7 @@ This is a WordPress plugin that collects useful snippets to enhance hidden/secre
 - Update logos in `assets` folder
 - this plugin is optimized for woocommerce child theme injections, so maybe review OOP class structure as per custom CPT plugin
 - update linters link into `scripts.env.py`
+- remove compiled styles for WooCommerce that might conflict with the theme
 - ...
 
 ### 2. Enjoy!
