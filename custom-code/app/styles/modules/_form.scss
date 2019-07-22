@@ -1,0 +1,84 @@
+input {
+  &.pushbutton-wide {
+    @include button-global();
+    @extend %button-solid;
+  }
+}
+
+// Single produce page input
+.single-product {
+  .quantity {
+    .qty {
+      height: $button-height;
+    }
+  }
+}
+
+// Cart page, coupon code form input
+table {
+  &.cart {
+    td {
+      &.actions {
+        input {
+          height: $button-height;
+          vertical-align: top;
+        }
+      }
+    }
+  }
+}
+
+// These styles are specific to the login page.
+.login {
+  .form-row {
+    input {
+      &[type="submit"] {
+        margin-right: rem(16);
+      }
+    }
+
+    .woocommerce-form__label-for-checkbox {
+      display: inline-block !important;
+      margin-top: rem(16);
+      margin-left: 0;
+      white-space: nowrap;
+    }
+  }
+}
+
+// Radio buttons for checkout page
+#payment {
+  .payment_methods {
+    > .wc_payment_method {
+      > [checked="checked"] {
+        + label {
+          &::before {
+            color: $blue !important;
+          }
+        }
+      }
+    }
+  }
+}
+
+// terms and conditons text
+.woocommerce-form__label-for-checkbox {
+  &.checkbox {
+    font-weight: normal;
+  }
+}
+
+.contact-form {
+  textarea {
+    width: 100% !important;
+  }
+
+  @include small-only() {
+    input[type=text],
+    input[type=email],
+    input[type=url] {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+  }
+}

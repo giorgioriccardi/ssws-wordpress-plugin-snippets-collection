@@ -9,7 +9,10 @@ This is a WordPress plugin that collects useful snippets to enanche hidden/secre
 - Custom Login Link
 - Add Alt Description to images, derived from image title or file name
 - Google Analytics input field into customizr (to be implemented), so the GA code/snippet is unrelated to the theme!
-- 
+- Add Wiki section for Our guidelines: https://www.seatoskywebsolutions.ca/wiki/spaces/TT/pages/1628862/Mobile+Responsive+Guidelines
+- Allow SVG upload in media gallery
+- Update logos in `assets` folder
+- ...
 
 ### 2. Enjoy!
 

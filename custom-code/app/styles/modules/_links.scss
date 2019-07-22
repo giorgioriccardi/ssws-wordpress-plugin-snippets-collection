@@ -1,0 +1,79 @@
+a {
+  &:hover {
+    color: $blue;
+  }
+}
+
+// header cart dropdown
+// .site-header-cart .widget_shopping_cart .product_list_widget .mini_cart_item a.remove + a:hover
+// .site-header-cart {
+//   .widget_shopping_cart {
+//     .product_list_widget {
+//       .mini_cart_item {
+//         a {
+//           &.remove {
+//             + a {
+//               &:hover {
+//                 color: $blue !important;
+//               }
+//             }
+//           }
+//         }
+//       }
+//     }
+//   }
+// }
+
+// homepage mid-menu
+// .homestore-homepage-menu .homepage-navigation ul li a:hover
+.homestore-homepage-menu {
+  .homepage-navigation {
+    ul {
+      li {
+        a {
+          color: $white;
+
+          &:hover {
+            color: $blue;
+          }
+        }
+      }
+    }
+  }
+}
+
+// cart product list
+table {
+  tbody {
+    td {
+      a {
+        &:hover {
+          color: $blue;
+        }
+      }
+    }
+  }
+}
+
+.woocommerce-breadcrumb {
+  a {
+    &:hover {
+      color: $blue;
+    }
+  }
+}
+
+.pagination .page-numbers li .page-numbers.current,
+.woocommerce-pagination .page-numbers li .page-numbers.current {
+  border-color: $blue;
+  background-color: $blue;
+  color: $white;
+}
+
+.woocommerce-pagination ul.page-numbers li .page-numbers {
+  &:hover {
+    border-color: $blue-dark;
+    background-color: $blue-dark;
+    color: $white;
+  }
+}

@@ -1,0 +1,171 @@
+$button-height: rem(46);
+
+@mixin common-line() {
+  position: absolute;
+  top: 48%;
+  height: rem(1);
+  content: "";
+  transition: width 0.3s ease-in-out;
+  border-bottom: solid $blue rem(2);
+}
+
+// Solid blue button
+%button-solid {
+  color: $white;
+  background-color: $blue;
+
+  &::before,
+  &::after {
+    content: none;
+  }
+
+  &:hover {
+    color: $white;
+    background-color: $blue-dark;
+  }
+}
+
+// Button styles that are the same for all buttons
+@mixin button-global() {
+  display: inline-block;
+  height: $button-height;
+  padding: rem(10) rem(30) !important;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: rem(1);
+  border: 0;
+  font-size: rem(10) !important;
+  font-weight: 600 !important;
+  line-height: 2.9;
+}
+
+// The little lines on the button.
+@mixin button-lines() {
+  &::before {
+    @include common-line();
+    left: 0;
+    overflow: hidden;
+    width: rem(10);
+  }
+
+  &::after {
+    @include common-line();
+    left: calc(100% - 20px);
+    width: 0;
+    border-bottom: solid $blue-dark rem(2);
+  }
+}
+
+// The width of the lines on hover.
+@mixin button-lines-hover() {
+  &::before {
+    width: rem(20);
+  }
+
+  &::after {
+    width: rem(20);
+  }
+}
+
+
+
+.button {
+  @include button-global();
+  @include button-lines()
+
+  // only for gradient buttons
+  &.ajax_add_to_cart {
+    // background-image: url('../assets/images/ww-as-button-gradient-transparent-bg3.svg');
+    background-image: url('../assets/images/ww-as-button-gradient-transparent-bg4.png');
+    background-position: top left;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box !important;
+
+  &:hover {
+    @include button-lines-hover()
+    background-color: $transparent;
+    text-decoration: none;
+    box-sizing: border-box !important;
+  }
+
+  &.loading {
+    &::before,
+    &::after {
+      border: 0;
+    }
+  }
+}
+
+// woo-commerce buttons
+.page.woocommerce-page {
+  .flex-direction-nav {
+    li {
+      &:nth-child(2) {
+        a {
+          &:after {
+            content: "";
+          }
+        }
+      }
+    }
+  }
+
+  button:not(.menu-toggle),
+  input[type="button"],
+  input[type="reset"],
+  input[type="submit"],
+  .button,
+  .added_to_cart,
+  .widget a.button {
+    @include button-global();
+    @extend %button-solid;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  button.alt,
+  input[type="button"].alt,
+  input[type="reset"].alt,
+  input[type="submit"].alt,
+  .button.alt,
+  .added_to_cart.alt,
+  .widget-area .widget a.button.alt,
+  .widget a.button.checkout,
+  a.button.wc-backward {
+    @include button-global();
+    @extend %button-solid;
+  }
+}
+
+// Single item view, add to cart button
+.single {
+  &.woocommerce-page {
+    button {
+      &.single_add_to_cart_button {
+        &.button {
+          &.alt {
+            @include button-global();
+            @extend %button-solid;
+          }
+        }
+      }
+    }
+  }
+}
+
+button {
+  &:focus {
+    outline: none !important;
+  }
+}

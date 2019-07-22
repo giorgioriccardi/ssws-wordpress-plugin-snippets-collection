@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <title>project showcase</title>
+  <!-- Favicons -->
+  <link rel="icon" type="image/png" href="images/CP_Favicon.png" sizes="16x16"> <!-- browser -->
+  <link rel="icon" type="image/png" href="images/CP_Favicon.png" sizes="32x32"> <!-- taskbar shortcut -->
+  <link rel="icon" type="image/png" href="images/CP_Favicon.png" sizes="96x96"> <!-- desktop shortcut -->
+
+  <!-- Apple touch icons -->
+  <link rel="apple-touch-icon" href="images/CP_Favicon.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="images/CP_Favicon.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="images/CP_Favicon.png">
+  <link rel="apple-touch-icon" sizes="167x167" href="images/CP_Favicon.png">
+
+  <!-- Facebook Share -->
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="path/to/image.png">
+  <meta property="og:site_name" content="">
+  <meta property="og:title" content="">
+  <meta property="og:url" content="">
+  <meta property="og:description" content="">
+
+  <!-- Twitter cards -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:image" content="path/to/image.png">
+  <meta name="twitter:site" content="">
+  <meta name="twitter:creator" content="">
+  <meta name="twitter:url" content="">
+  <meta name="twitter:title" content="">
+  <meta name="twitter:description" content="">
+
+  <!-- Important for SEO -->
+  <meta id="js_meta" name="robots" content="noindex, nofollow, noarchive, nosnippet, noodp, noydir">
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <!-- build:css(.tmp) styles/style.css -->
+  <link rel="stylesheet" href="styles/style.css">
+  <!-- endbuild -->
+
+  <script>
+    // Update the meta tag and google analytics if live
+    var meta_tag = document.getElementById('js_meta');
+    var ga_id = 'UA-XXXXX-X';
+
+    window.__is_live = window.location.hostname === 'travel.citizenrelations.com';
+
+    if (window.__is_live) {
+      meta_tag.setAttribute('content', 'index, follow');
+
+      (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+      function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+      e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+      e.src='https://www.google-analytics.com/analytics.js';
+      r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+      ga('create', ga_id);ga('send','pageview');
+    }
+  </script>
+</head>
+<body>
+
+  <!-- build:js scripts/vendor.js -->
+  <!-- bower:js -->
+  <!-- endbower -->
+  <!-- endbuild -->
+
+  <!-- build:js scripts/main.js -->
+  <script src="scripts/main.js"></script>
+  <!-- endbuild -->
+</body>
+</html>

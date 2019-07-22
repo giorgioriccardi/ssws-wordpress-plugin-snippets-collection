@@ -1,0 +1,22 @@
+node_modules
+.tmp
+bower_components
+test/bower_components
+.env
+
+# Files injected by scripts/update-env.py:
+/.babelrc
+/.eslintrc
+/.editorconfig
+/.sass-lint.yml
+/.pre-commit-config.yaml
+/scripts/update-env.py
+README-frontend.md
+
+# Test automation
+test/allure-report
+test/allure-results
+test/error-shots
+test/logs
+test/screenshots/diff
+test/screenshots/taken

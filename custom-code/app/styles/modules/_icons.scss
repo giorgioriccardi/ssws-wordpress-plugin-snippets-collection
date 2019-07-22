@@ -1,0 +1,176 @@
+// remove default WC icons from menus
+.widget_nav_menu,
+.widget_product_categories {
+  ul {
+    li {
+
+      &::before {
+        content: "";
+      }
+
+      &.current-cat {
+        &::before {
+          content: "";
+        }
+      }
+    }
+  }
+}
+
+// custom social Icons
+.menu-social-icons-menu-container a[href*="dribbble.com"],
+.menu-social-icons-menu-container a[href*="facebook.com"],
+.menu-social-icons-menu-container a[href*="flickr.com"],
+.menu-social-icons-menu-container a[href*="foursquare.com"],
+.menu-social-icons-menu-container a[href*="plus.google.com"],
+.menu-social-icons-menu-container a[href*="instagram.com"],
+.menu-social-icons-menu-container a[href*="linkedin.com"],
+.menu-social-icons-menu-container a[href*="pinterest.com"],
+.menu-social-icons-menu-container a[href*="reddit.com"],
+.menu-social-icons-menu-container a[href*="tumblr.com"],
+.menu-social-icons-menu-container a[href*="twitter.com"],
+.menu-social-icons-menu-container a[href*="vimeo.com"],
+.menu-social-icons-menu-container a[href*="wordpress.com"],
+.menu-social-icons-menu-container a[href*="wordpress.org"],
+.menu-social-icons-menu-container a[href*="youtube.com"],
+.menu-social-icons-menu-container a[href*="mailto:"],
+.menu-social-icons-menu-container a[href*="twitch.tv"],
+.menu-social-icons-menu-container a[href$="/feed/"] {
+	text-indent: -9999px;
+}
+.menu-social-icons-menu-container a[href*="dribbble.com"]:after,
+.menu-social-icons-menu-container a[href*="facebook.com"]:after,
+.menu-social-icons-menu-container a[href*="flickr.com"]:after,
+.menu-social-icons-menu-container a[href*="foursquare.com"]:after,
+.menu-social-icons-menu-container a[href*="plus.google.com"]:after,
+.menu-social-icons-menu-container a[href*="instagram.com"]:after,
+.menu-social-icons-menu-container a[href*="linkedin.com"]:after,
+.menu-social-icons-menu-container a[href*="pinterest.com"]:after,
+.menu-social-icons-menu-container a[href*="reddit.com"]:after,
+.menu-social-icons-menu-container a[href*="tumblr.com"]:after,
+.menu-social-icons-menu-container a[href*="twitter.com"]:after,
+.menu-social-icons-menu-container a[href*="vimeo.com"]:after,
+.menu-social-icons-menu-container a[href*="wordpress.com"]:after,
+.menu-social-icons-menu-container a[href*="wordpress.org"]:after,
+.menu-social-icons-menu-container a[href*="youtube.com"]:after,
+.menu-social-icons-menu-container a[href*="mailto:"]:after,
+.menu-social-icons-menu-container a[href*="twitch.tv"]:after,
+.menu-social-icons-menu-container a[href$="/feed/"]:after {
+	font-family: "FontAwesome";
+	text-indent: 0;
+	display: block;
+	float: left;
+}
+.menu-social-icons-menu-container a[href$="/feed/"]:after {
+	content: "\f09e";
+	color: #ff9900;
+}
+.menu-social-icons-menu-container a[href*="twitch.tv"]:after {
+	content: "\f1e8";
+	color: #6441A5;
+}
+.menu-social-icons-menu-container a[href*="mailto:"]:after {
+	content: "\f003";
+}
+.menu-social-icons-menu-container a[href*="youtube.com"]:after {
+	// content: "\f167";
+  content: "\f16a";
+	color: #bb0000;
+}
+.menu-social-icons-menu-container a[href*="wordpress.com"]:after,
+.menu-social-icons-menu-container a[href*="wordpress.org"]:after {
+	content: "\f19a";
+	color: #0073aa;
+}
+.menu-social-icons-menu-container a[href*="vimeo.com"]:after {
+	content: "\f194";
+	color: #aad450;
+}
+.menu-social-icons-menu-container a[href*="tumblr.com"]:after {
+	content: "\f173";
+	color: #32506d;
+}
+.menu-social-icons-menu-container a[href*="reddit.com"]:after {
+	content: "\f231";
+}
+.menu-social-icons-menu-container a[href*="twitter.com"]:after {
+	content: "\f099";
+	color: #00aced;
+}
+.menu-social-icons-menu-container a[href*="dribbble.com"]:after {
+	content: "\f17d";
+	color: #ea4c89;
+}
+.menu-social-icons-menu-container a[href*="facebook.com"]:after {
+	content: "\f09a";
+	color: #3b5998;
+}
+.menu-social-icons-menu-container a[href*="flickr.com"]:after {
+	content: "\f16e";
+	color: #ff0084;
+}
+.menu-social-icons-menu-container a[href*="foursquare.com"]:after {
+	content: "\f180";
+	color: #0072b1;
+}
+.menu-social-icons-menu-container a[href*="plus.google.com"]:after {
+	content: "\f0d5";
+	color: #dd4b39;
+}
+.menu-social-icons-menu-container a[href*="instagram.com"]:after {
+	content: "\f16d";
+	color: #517fa4;
+}
+.menu-social-icons-menu-container a[href*="linkedin.com"]:after {
+	content: "\f0e1";
+	color: #007bb6;
+}
+.menu-social-icons-menu-container a[href*="pinterest.com"]:after {
+	content: "\f231";
+	color: #cb2027;
+}
+
+// hide label for social links in footer menu
+.site-footer {
+  .menu-social-icons-menu-container {
+    @include small-only() {
+      overflow: hidden;
+    }
+
+    a {
+      padding: 0;
+      float: left;
+      font-size: rem(18) !important;
+      font-weight: normal !important;
+      &::after {
+        color: $white;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+
+      &:not(.button),
+      &:not(.button):hover {
+        color: $transparent;
+      }
+    }
+
+    ul {
+      display: flex;
+      align-items: baseline;
+
+      li {
+        max-width: rem(40);
+        flex-grow: 1;
+      }
+    }
+  }
+}
+
+
+ul#menu-social-icons-menu li:first-child {
+  padding-left: 0;
+
+  > a {
+    padding-left: rem(0);
+  }
+}

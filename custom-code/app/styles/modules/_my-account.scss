@@ -1,0 +1,5 @@
+.woocommerce-Address-title {
+  @include medium-up() {
+    display: flex;
+  }
+}

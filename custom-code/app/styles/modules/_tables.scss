@@ -1,0 +1,48 @@
+$border-color: #e1e1e1;
+
+%no-top-border {
+  tbody {
+    tr {
+      &:not(:first-child) {
+        &:not(:last-child) {
+          td,
+          th {
+            border-top: 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Checkout review order
+.woocommerce-checkout-review-order-table,
+.woocommerce-table--order-details {
+  @extend %no-top-border;
+}
+
+.woocommerce-orders-table {
+  @extend %no-top-border;
+  tbody {
+    tr {
+      &:not(:first-child) {
+        td,
+        th {
+          @include medium-up() {
+            border-top: dashed rem(1) $border-color !important;
+          }
+        }
+
+        td {
+          border-top: 0;
+
+          &:first-child {
+            @include small-only() {
+              border-top: dashed rem(1) $border-color;
+            }
+          }
+        }
+      }
+    }
+  }
+}
