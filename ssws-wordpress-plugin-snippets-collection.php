@@ -1,8 +1,8 @@
 <?php
 /**
- * Plugin Name: SSWS WordPress Plugin Snippets Collection
+ * Plugin Name: SSWS Snippets Collection
  * Plugin URI: https://www.seatoskywebsolutions.ca/
- * Description: WordPress plugin that collects useful snippets to enanche hidden/secret WP functionalty
+ * Description: WordPress plugin that collects useful snippets to enanche hidden/secret WP functionality
  * Version: 1.0.0
  * Author: Giorgio Riccardi @SSWS
  * Author URI: https://www.seatoskywebsolutions.ca/
