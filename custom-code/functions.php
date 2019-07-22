@@ -51,7 +51,7 @@ function ssws_enqueue_files()
 {
     wp_enqueue_script('googleMap', '//maps.googleapis.com/maps/api/js?key=YOUR-GMAPS-API-KEY', null, '1.0', true);
 }
-add_action('wp_enqueue_scripts', 'ssws_files');
+add_action('wp_enqueue_scripts', 'ssws_enqueue_files');
 
 function sswsMapKey($api)
 {

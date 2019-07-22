@@ -141,7 +141,7 @@ class SSWSFunctions
             return;
         }
 
-        // CPF actions and filters
+        // SSWSFNCT actions and filters
         add_action('wp_head', array($this, 'print_css'));
         add_action('admin_bar_menu', array($this, 'admin_bar_menu'), 1000);
 

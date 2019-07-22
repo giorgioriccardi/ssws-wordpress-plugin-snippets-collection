@@ -14,6 +14,7 @@ This is a WordPress plugin that collects useful snippets to enhance hidden/secre
 - Allow SVG upload in media gallery
 - Update logos in `assets` folder
 - this plugin is optimized for woocommerce child theme injections, so maybe review OOP class structure as per custom CPT plugin
+- update linters link into `scripts.env.py`
 - ...
 
 ### 2. Enjoy!
