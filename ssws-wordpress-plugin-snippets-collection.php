@@ -40,8 +40,8 @@ if (!defined('ABSPATH')) {
 class SSWSFunctions
 {
 
-    const OPTION_INSTALL_DATE = 'ssws-functions-install-date';
-    const OPTION_ADMIN_NOTICE_KEY = 'ssws-functions-hide-notice';
+    const OPTION_INSTALL_DATE = 'ssws-wordpress-plugin-snippets-collection-install-date';
+    const OPTION_ADMIN_NOTICE_KEY = 'ssws-wordpress-plugin-snippets-collection-hide-notice';
 
     /**
      * Method run on plugin activation
@@ -200,18 +200,24 @@ class SSWSFunctions
         $wp_admin_bar->add_menu(array(
             'id' => 'sswsfnct-bar',
             'parent' => 'top-secondary',
-            'title' => __('SSWS', 'ssws-functions'),
-            'href' => false,
+            'class' => '',
+            'href' => 'https://www.seatoskywebsolutions.ca/',
+            'meta' => array(
+                'target' => '_blank',
+                'title' => __('SSWS', 'ssws-wordpress-plugin-snippets-collection'), // Text will be shown on hovering
+            ),
         ));
 
         // Add powered by
         $wp_admin_bar->add_menu(array(
             'id' => 'sswsfnct-bar-powered-by',
             'parent' => 'sswsfnct-bar',
-            'title' => 'Powered by SSWS WP Development',
             'class' => '',
             'href' => 'https://www.seatoskywebsolutions.ca/',
-            'target' => '_blank',
+            'meta' => array(
+                'target' => '_blank',
+                'title' => __('Powered by Sea to Sky Web Solutions', 'ssws-wordpress-plugin-snippets-collection'), // Text will be shown on hovering
+            ),
         ));
 
     }
