@@ -104,6 +104,48 @@ class SSWSFunctions
         wp_enqueue_script('ssws-custom-js', plugins_url('/custom-code/scripts/main.js', __FILE__), array('jquery'));
     }
 
+    /**
+     * Look in this plugin for template files first.
+     * This works for the top level templates (IE single.php, page.php etc). However, it doesn't work for
+     * template parts yet (content.php, header.php etc).
+     *
+     * Relevant trac ticket; https://core.trac.wordpress.org/ticket/13239
+     *
+     * @param  string $template template string.
+     * @return string $template new template string.
+     */
+    public function theme_customization_template($template)
+    {
+        if (file_exists(untrailingslashit(plugin_dir_path(__FILE__)) . '/custom-code/templates/' . basename($template))) {
+            $template = untrailingslashit(plugin_dir_path(__FILE__)) . '/custom-code/templates/' . basename($template);
+        }
+
+        return $template;
+    }
+
+    /**
+     * Look in this plugin for WooCommerce template overrides.
+     *
+     * For example, if you want to override woocommerce/templates/cart/cart.php, you
+     * can place the modified template in <plugindir>/custom-code/templates/woocommerce/cart/cart.php
+     *
+     * @param string $located is the currently located template, if any was found so far.
+     * @param string $template_name is the name of the template (ex: cart/cart.php).
+     * @return string $located is the newly located template if one was found, otherwise
+     *                         it is the previously found template.
+     */
+
+    // public function theme_customization_wc_get_template($located, $template_name, $args, $template_path, $default_path)
+    // {
+    //     $plugin_template_path = untrailingslashit(plugin_dir_path(__FILE__)) . '/custom-code/templates/woocommerce/' . $template_name;
+
+    //     if (file_exists($plugin_template_path)) {
+    //         $located = $plugin_template_path;
+    //     }
+
+    //     return $located;
+    // }
+
     // end custom functions and styles code
 
     // start admin bar banner code
@@ -179,7 +221,7 @@ class SSWSFunctions
      */
     public function print_css()
     {
-        echo "<style type=\"text/css\" media=\"screen\"> #wp-admin-bar-sswsfnct-bar > .ab-item { padding-right: 26px !important; background: url('" . plugins_url('assets/images/camp-pacific-icon.svg', __FILE__) . "') center right no-repeat !important; background-size: contain !important; } #wp-admin-bar-sswsfnct-bar.hover > .ab-item { background-color: #32373c !important; } #wp-admin-bar-sswsfnct-bar #wp-admin-bar-sswsfnct-bar-template-file .ab-item, #wp-admin-bar-sswsfnct-bar #wp-admin-bar-sswsfnct-bar-template-parts { text-align: right; } #wp-admin-bar-sswsfnct-bar-template-parts.menupop > .ab-item: before { right: auto !important; } #wp-admin-bar-sswsfnct-bar-powered-by { text-align: right; } #wp-admin-bar-sswsfnct-bar-powered-by a { color:#c6ff00 !important; } </style>\n";
+        echo "<style type=\"text/css\" media=\"screen\"> #wp-admin-bar-sswsfnct-bar > .ab-item { padding-right: 26px !important; background: url('" . plugins_url('assets/images/ssws-icon.svg', __FILE__) . "') center right no-repeat !important; background-size: contain !important; } #wp-admin-bar-sswsfnct-bar.hover > .ab-item { background-color: #32373c !important; } #wp-admin-bar-sswsfnct-bar #wp-admin-bar-sswsfnct-bar-template-file .ab-item, #wp-admin-bar-sswsfnct-bar #wp-admin-bar-sswsfnct-bar-template-parts { text-align: right; } #wp-admin-bar-sswsfnct-bar-template-parts.menupop > .ab-item: before { right: auto !important; } #wp-admin-bar-sswsfnct-bar-powered-by { text-align: right; } #wp-admin-bar-sswsfnct-bar-powered-by a { color:#c6ff00 !important; } </style>\n";
     }
 
     // end admin bar banner code
