@@ -2,7 +2,7 @@
  * Breakpoint Configuration
  * @see http://breakpoint-sass.com/
  *
- * Our guidelines: https://www.seatoskywebsolutions.ca/wiki/spaces/TT/pages/1628862/Mobile+Responsive+Guidelines
+ * Our guidelines: https://seatoskywebsolutions.ca/wiki/spaces/TT/TT-MobileResponsiveGuidelines-240318-0106.pdf
  *
  */
 
@@ -19,7 +19,7 @@ $max-width: $xxlarge;
 
 $breakpoints: ($medium, $large, $xlarge, $xxlarge);
 
-// Device resolutions based on https://www.seatoskywebsolutions.ca/wiki/spaces/TT/pages/16908296/Non-Drupal+responsive+image+asset+guidelines
+// Device resolutions based on https://seatoskywebsolutions.ca/wiki/spaces/TT/TT-Non-Drupalresponsiveimageassetguidelines-240318-0107.pdf
 $one-point-fivex: min-resolution 1.5dppx;
 $twox: min-resolution 2dppx;
 $threex: min-resolution 3dppx;
