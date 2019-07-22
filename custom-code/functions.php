@@ -42,6 +42,7 @@ function add_GoogleAnalytics()
 }
     }
 }
+// this needs to be implemented with a custom input field via customizr to keep the key separated from the theme
 
 /********************************************************/
 // Customize Login Screen ver. 3.0
