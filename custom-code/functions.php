@@ -19,8 +19,8 @@ if (!defined('ABSPATH')) {
 /********************************************************/
 // Install Google Analytics in WordPress
 /********************************************************/
-add_action('wp_footer', 'add_GoogleAnalytics');
-function add_GoogleAnalytics()
+add_action('wp_footer', 'ssws_Add_GoogleAnalytics');
+function ssws_Add_GoogleAnalytics()
 {
     // wrap the GA code in an if condition to match only live site url
     // if ($_SERVER['HTTP_HOST']==="your-local.site" || $_SERVER['HTTP_HOST']==="www.your-local.site") { // local
@@ -84,35 +84,35 @@ add_filter('login_headertitle', 'SSWSLoginTitle');
 /********************************************************/
 // Automatically set the image Title, Alt-Text, Caption & Description upon upload
 /********************************************************/
-add_action('add_attachment', 'my_set_image_meta_upon_image_upload');
-function my_set_image_meta_upon_image_upload($post_ID)
+add_action('add_attachment', 'ssws_set_image_meta_upon_image_upload');
+function ssws_set_image_meta_upon_image_upload($post_ID)
 {
     // Check if uploaded file is an image, else do nothing
 
     if (wp_attachment_is_image($post_ID)) {
 
-        $my_image_title = get_post($post_ID)->post_title;
+        $ssws_image_title = get_post($post_ID)->post_title;
 
         // Sanitize the title:  remove hyphens, underscores & extra spaces:
-        $my_image_title = preg_replace('%\s*[-_\s]+\s*%', ' ', $my_image_title);
+        $ssws_image_title = preg_replace('%\s*[-_\s]+\s*%', ' ', $ssws_image_title);
 
         // Sanitize the title:  capitalize first letter of every word (other letters lower case):
-        $my_image_title = ucwords(strtolower($my_image_title));
+        $ssws_image_title = ucwords(strtolower($ssws_image_title));
 
         // Create an array with the image meta (Title, Caption, Description) to be updated
         // Note:  comment out the Excerpt/Caption or Content/Description lines if not needed
-        $my_image_meta = array(
+        $ssws_image_meta = array(
             'ID' => $post_ID, // Specify the image (ID) to be updated
-            'post_title' => $my_image_title, // Set image Title to sanitized title
-            // 'post_excerpt'    => $my_image_title,        // Set image Caption (Excerpt) to sanitized title
-            // 'post_content'    => $my_image_title,        // Set image Description (Content) to sanitized title
+            'post_title' => $ssws_image_title, // Set image Title to sanitized title
+            // 'post_excerpt'    => $ssws_image_title,        // Set image Caption (Excerpt) to sanitized title
+            // 'post_content'    => $ssws_image_title,        // Set image Description (Content) to sanitized title
         );
 
         // Set the image Alt-Text
-        update_post_meta($post_ID, '_wp_attachment_image_alt', $my_image_title);
+        update_post_meta($post_ID, '_wp_attachment_image_alt', $ssws_image_title);
 
         // Set the image meta (e.g. Title, Excerpt, Content)
-        wp_update_post($my_image_meta);
+        wp_update_post($ssws_image_meta);
 
     }
 }
@@ -121,12 +121,12 @@ function my_set_image_meta_upon_image_upload($post_ID)
 /********************************************************/
 // Allow SVG through WordPress Media Uploader
 /********************************************************/
-function cc_mime_types($mimes)
+function ssws_mime_types($mimes)
 {
     $mimes['svg'] = 'image/svg+xml';
     return $mimes;
 }
-add_filter('upload_mimes', 'cc_mime_types');
+add_filter('upload_mimes', 'ssws_mime_types');
 
 /********************************************************/
 // ----------
