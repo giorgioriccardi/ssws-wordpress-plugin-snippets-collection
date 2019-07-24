@@ -1,0 +1,18 @@
+-   repo: git@gitlab.com:cp-devops/pre-commit-d8.git
+    sha: d435373a2d0a3cd4f90c2e041da4c3f2ff9523a7
+    hooks:
+    -   id: php-lint
+        files: \.(php|module|inc|install|test|profile|theme)$
+    -   id: php-cs
+        files: \.(php|module|inc|install|test|profile|theme)$
+        args:
+        - --standard=Drupal --ignore="*.features.*,*.pages*.inc,settings*.php"
+    -   id: sass-lint
+        files: \.(sass|scss)$
+    -   id: eslint
+        files: \.(js)$
+-   repo: git://github.com/pre-commit/pre-commit-hooks
+    sha: v0.8.0
+    hooks:
+    -   id: check-yaml
+        files: \.(yaml|yml)$
