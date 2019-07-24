@@ -11,12 +11,12 @@ This is a WordPress plugin that collects useful snippets to enhance hidden/secre
 - Google Analytics input field into customizr (to be implemented), so the GA code/snippet is unrelated to the theme!
 - Google Maps Key input field into customizr (to be implemented), so the GM code/snippet is unrelated to the theme!
 - ~~Add Wiki section for Our guidelines: https://seatoskywebsolutions.ca/wiki/spaces/TT/TT-MobileResponsiveGuidelines-240318-0106.pdf~~
-- Allow SVG upload in media gallery
-- Update logos in `assets` folder
+- ~~Allow SVG upload in media gallery~~
+- ~~Update logos in `assets` folder~~
 - this plugin is optimized for woocommerce child theme injections, so maybe review OOP class structure as per custom CPT plugin
-- update linters link into `scripts.env.py`
-- remove compiled styles for WooCommerce that might conflict with the theme
-- adjust powered by adim bar text and color to match ssws and not CP
+- ~~update linters link into `scripts.env.py`~~
+- ~~remove compiled styles for WooCommerce that might conflict with the theme~~
+- ~~adjust powered by adim bar text and color to match ssws and not CP~~
 - ...
 
 ### 2. Enjoy!
