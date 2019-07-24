@@ -227,7 +227,7 @@ class SSWSFunctions
      */
     public function print_css()
     {
-        echo "<style type=\"text/css\" media=\"screen\"> #wp-admin-bar-sswsfnct-bar > .ab-item { padding-right: 26px !important; background: url('" . plugins_url('assets/images/ssws-icon.svg', __FILE__) . "') center right no-repeat !important; background-size: contain !important; } #wp-admin-bar-sswsfnct-bar.hover > .ab-item { background-color: #32373c !important; } #wp-admin-bar-sswsfnct-bar #wp-admin-bar-sswsfnct-bar-template-file .ab-item, #wp-admin-bar-sswsfnct-bar #wp-admin-bar-sswsfnct-bar-template-parts { text-align: right; } #wp-admin-bar-sswsfnct-bar-template-parts.menupop > .ab-item: before { right: auto !important; } #wp-admin-bar-sswsfnct-bar-powered-by { text-align: right; } #wp-admin-bar-sswsfnct-bar-powered-by a { color:#c6ff00 !important; } </style>\n";
+        echo "<style type=\"text/css\" media=\"screen\"> #wp-admin-bar-sswsfnct-bar > .ab-item { padding-right: 26px !important; background: url('" . plugins_url('assets/images/ssws-icon.svg', __FILE__) . "') center right no-repeat !important; background-size: contain !important; } #wp-admin-bar-sswsfnct-bar.hover > .ab-item { background-color: #32373c !important; } #wp-admin-bar-sswsfnct-bar #wp-admin-bar-sswsfnct-bar-template-file .ab-item, #wp-admin-bar-sswsfnct-bar #wp-admin-bar-sswsfnct-bar-template-parts { text-align: right; } #wp-admin-bar-sswsfnct-bar-template-parts.menupop > .ab-item: before { right: auto !important; } #wp-admin-bar-sswsfnct-bar-powered-by { text-align: right; } #wp-admin-bar-sswsfnct-bar-powered-by a { color:#00b9eb !important; } </style>\n";
     }
 
     // end admin bar banner code

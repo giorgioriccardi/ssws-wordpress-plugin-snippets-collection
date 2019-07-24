@@ -20,7 +20,7 @@ class SSWSFNCT_Plugin_Links
      */
     public function add_links($links)
     {
-        // array_unshift( $links, '<a href="https://www.seatoskywebsolutions.ca/" target="_blank" style="color:#c6ff00;font-weight:bold;">' . __( 'Sea to Sky Web Solutions Website', 'ssws-wordpress-plugin-snippets-collection' ) . '</a>' );
+        // array_unshift( $links, '<a href="https://www.seatoskywebsolutions.ca/" target="_blank" style="color:#00b9eb;font-weight:bold;">' . __( 'Sea to Sky Web Solutions Website', 'ssws-wordpress-plugin-snippets-collection' ) . '</a>' );
 
         // array_unshift( $links, '<img class="" alt="" id="" height="24" width="24" style="position: relative; top: 7px; " src="' . esc_url( plugins_url( 'assets/images/ssws-icon.svg', dirname(__FILE__) ) ) . '">');
 
