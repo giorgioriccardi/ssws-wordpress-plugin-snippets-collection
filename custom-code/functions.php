@@ -19,7 +19,7 @@ if (!defined('ABSPATH')) {
 /********************************************************/
 // Install Google Analytics in WordPress
 /********************************************************/
-add_action('wp_footer', 'ssws_Add_GoogleAnalytics');
+// add_action('wp_footer', 'ssws_Add_GoogleAnalytics');
 function ssws_Add_GoogleAnalytics()
 {
     // wrap the GA code in an if condition to match only live site url
@@ -51,14 +51,14 @@ function ssws_enqueue_files()
 {
     wp_enqueue_script('googleMap', '//maps.googleapis.com/maps/api/js?key=YOUR-GMAPS-API-KEY', null, '1.0', true);
 }
-add_action('wp_enqueue_scripts', 'ssws_enqueue_files');
+// add_action('wp_enqueue_scripts', 'ssws_enqueue_files');
 
 function sswsMapKey($api)
 {
     $api['key'] = 'YOUR-GMAPS-API-KEY';
     return $api;
 }
-add_filter('acf/fields/google_map/api', 'sswsMapKey');
+// add_filter('acf/fields/google_map/api', 'sswsMapKey');
 // this needs to be implemented with a custom input field via customizr to keep the key separated from the theme
 
 /********************************************************/
