@@ -4,7 +4,7 @@
  *
  * @package  WP_Customization
  * @author   SSWS - Giorgio Riccardi
- * @since    1.2.0
+ * @since    1.3.0
  */
 
 if (!defined('ABSPATH')) {
@@ -52,6 +52,7 @@ if (!function_exists('ssws_Add_GoogleAnalytics')) {
 // Enqueue GMAPS API Key and store into variable
 /********************************************************/
 if (!function_exists('ssws_enqueue_files')) {
+
     function ssws_enqueue_files()
     {
         wp_enqueue_script('googleMap', '//maps.googleapis.com/maps/api/js?key=YOUR-GMAPS-API-KEY', null, '1.0', true);
@@ -66,6 +67,7 @@ if (!function_exists('sswsGoogleMapKey')) {
         return $api;
     }
     // add_filter('acf/fields/google_map/api', 'sswsGoogleMapKey');
+
 }
 // this needs to be implemented with a custom input field into WP dashboard so the GM code/snippet is unrelated to the theme and not hardcoded into the plugin function.
 
@@ -101,6 +103,7 @@ if (!function_exists('ssws_custom_login_fnc_container')) {
 // Automatically set the image Title, Alt-Text, Caption & Description upon upload
 /********************************************************/
 if (!function_exists('ssws_set_image_meta_upon_image_upload')) {
+
     add_action('add_attachment', 'ssws_set_image_meta_upon_image_upload');
     function ssws_set_image_meta_upon_image_upload($post_ID)
     {
@@ -133,6 +136,7 @@ if (!function_exists('ssws_set_image_meta_upon_image_upload')) {
 
         }
     }
+
 }
 // http://brutalbusiness.com/automatically-set-the-wordpress-image-title-alt-text-other-meta/
 
@@ -140,12 +144,14 @@ if (!function_exists('ssws_set_image_meta_upon_image_upload')) {
 // Allow SVG through WordPress Media Uploader
 /********************************************************/
 if (!function_exists('ssws_mime_types')) {
+
     function ssws_mime_types($mimes)
     {
         $mimes['svg'] = 'image/svg+xml';
         return $mimes;
     }
     add_filter('upload_mimes', 'ssws_mime_types');
+
 }
 
 /********************************************************/
