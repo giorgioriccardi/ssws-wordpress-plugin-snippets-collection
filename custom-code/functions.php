@@ -42,7 +42,7 @@ function ssws_Add_GoogleAnalytics()
 }
     }
 }
-// this needs to be implemented with a custom input field via customizr to keep the key separated from the theme
+// this needs to be implemented with a custom input field into WP dashboard so the GA code/snippet is unrelated to the theme and not hardcoded into the plugin function.
 
 /********************************************************/
 // Enqueue GMAPS API Key and store into variable
@@ -59,7 +59,7 @@ function sswsMapKey($api)
     return $api;
 }
 // add_filter('acf/fields/google_map/api', 'sswsMapKey');
-// this needs to be implemented with a custom input field via customizr to keep the key separated from the theme
+// this needs to be implemented with a custom input field into WP dashboard so the GM code/snippet is unrelated to the theme and not hardcoded into the plugin function.
 
 /********************************************************/
 // Customize Login Screen ver. 3.0
