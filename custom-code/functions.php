@@ -150,9 +150,11 @@ if (!function_exists('ssws_mime_types')) {
         $mimes['svg'] = 'image/svg+xml';
         return $mimes;
     }
-    add_filter('upload_mimes', 'ssws_mime_types');
+    // add_filter('upload_mimes', 'ssws_mime_types');
 
 }
+// not working anymore from WP 5.x
+// check https://wordpress.org/plugins/safe-svg/
 
 /********************************************************/
 // ----------

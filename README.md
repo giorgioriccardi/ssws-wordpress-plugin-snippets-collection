@@ -15,7 +15,7 @@ C/O https://placeholder.com/  or https://dummyimage.com/600x400/000/fff
 - ~~Custom Login Link~~
 - ~~Add Alt Description to images, derived from image title or file name~~
 - ~~Add Wiki section for Our guidelines: https://seatoskywebsolutions.ca/wiki/spaces/TT/TT-MobileResponsiveGuidelines-240318-0106.pdf~~
-- ~~Allow SVG upload in media gallery~~
+- Allow SVG upload in media gallery; the old snippet is not working anymore since WP 5.x
 - ~~Update logos in `assets` folder~~
 - ~~update linters link into `scripts.env.py`~~
 - ~~remove compiled styles for WooCommerce that might conflict with the theme~~
