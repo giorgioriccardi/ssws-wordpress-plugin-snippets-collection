@@ -72,22 +72,30 @@ if (!function_exists('sswsGoogleMapKey')) {
 /********************************************************/
 // Customize Login Screen ver. 3.0
 /********************************************************/
-add_filter('login_headerurl', 'SSWSHeaderUrl');
-function SSWSHeaderUrl()
-{
-    return esc_url(site_url('/'));
+
+if (!function_exists('ssws_custom_login_fnc_container')) {
+
+    function ssws_custom_login_fnc_container()
+    {
+        add_filter('login_headerurl', 'SSWSHeaderUrl');
+        function SSWSHeaderUrl()
+        {
+            return esc_url(site_url('/'));
+        }
+        add_action('login_enqueue_scripts', 'SSWSLoginCSS');
+        function SSWSLoginTitle()
+        {
+            return get_bloginfo('name');
+        }
+        function SSWSLoginCSS()
+        {
+            wp_enqueue_style('ssws_main_styles', get_stylesheet_uri());
+            wp_enqueue_style('custom-google-fonts', '//fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400,400i,700,700i|Roboto:100,300,400,400i,700,700i');
+        }
+        add_filter('login_headertitle', 'SSWSLoginTitle');
+    }
+
 }
-add_action('login_enqueue_scripts', 'SSWSLoginCSS');
-function SSWSLoginTitle()
-{
-    return get_bloginfo('name');
-}
-function SSWSLoginCSS()
-{
-    wp_enqueue_style('ssws_main_styles', get_stylesheet_uri());
-    wp_enqueue_style('custom-google-fonts', '//fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400,400i,700,700i|Roboto:100,300,400,400i,700,700i');
-}
-add_filter('login_headertitle', 'SSWSLoginTitle');
 
 /********************************************************/
 // Automatically set the image Title, Alt-Text, Caption & Description upon upload

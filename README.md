@@ -11,7 +11,7 @@ This is a WordPress plugin that collects useful snippets to enhance hidden/secre
 - Add image placeholder js replacement for missing img; use https://via.placeholder.com/468x60?text=Visit+Blogging.com+Now
 
 C/O https://placeholder.com/  or https://dummyimage.com/600x400/000/fff
-- wrap `Customize Login Screen ver. 3.0` into a function container to add `if (!function_exists(''))` condition
+- wrap `Customize Login Screen ver. 3.0` into a function container to add `if(!function_exists(''))` condition
 - ~~Custom Login Link~~
 - ~~Add Alt Description to images, derived from image title or file name~~
 - ~~Add Wiki section for Our guidelines: https://seatoskywebsolutions.ca/wiki/spaces/TT/TT-MobileResponsiveGuidelines-240318-0106.pdf~~
