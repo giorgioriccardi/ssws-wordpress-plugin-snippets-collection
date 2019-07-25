@@ -2,9 +2,9 @@
 /**
  * Functions.php
  *
- * @package  Theme_Customization
- * @author   WooThemes
- * @since    1.0.0
+ * @package  WP_Customization
+ * @author   SSWS - Giorgio Riccardi
+ * @since    1.2.0
  */
 
 if (!defined('ABSPATH')) {
@@ -19,46 +19,54 @@ if (!defined('ABSPATH')) {
 /********************************************************/
 // Install Google Analytics in WordPress
 /********************************************************/
-// add_action('wp_footer', 'ssws_Add_GoogleAnalytics');
-function ssws_Add_GoogleAnalytics()
-{
-    // wrap the GA code in an if condition to match only live site url
-    // if ($_SERVER['HTTP_HOST']==="your-local.site" || $_SERVER['HTTP_HOST']==="www.your-local.site") { // local
-    if ($_SERVER['HTTP_HOST'] === "your-live-site.com" || $_SERVER['HTTP_HOST'] === "www.your-live-site.com") { // production
-        if (@$_COOKIE["COOKIENAME"] !== "COOKIEVALUE") {
-            // Insert Analytics Code Here
-            ?>
-      		<script>
-      		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      		  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+if (!function_exists('ssws_Add_GoogleAnalytics')) {
 
-      		  ga('create', 'UA-xxxxxx-x', 'auto');
-      		  ga('send', 'pageview');
+    // add_action('wp_footer', 'ssws_Add_GoogleAnalytics');
+    function ssws_Add_GoogleAnalytics()
+    {
+        // wrap the GA code in an if condition to match only live site url
+        // if ($_SERVER['HTTP_HOST']==="your-local.site" || $_SERVER['HTTP_HOST']==="www.your-local.site") { // local
+        if ($_SERVER['HTTP_HOST'] === "your-live-site.com" || $_SERVER['HTTP_HOST'] === "www.your-live-site.com") { // production
+            if (@$_COOKIE["COOKIENAME"] !== "COOKIEVALUE") {
+                // Insert Analytics Code Here
+                ?>
+                <script>
+                (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+                })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-      		</script>
-      	<?php
+                ga('create', 'UA-xxxxxx-x', 'auto');
+                ga('send', 'pageview');
+
+                </script>
+            <?php
 }
+        }
     }
+
 }
 // this needs to be implemented with a custom input field into WP dashboard so the GA code/snippet is unrelated to the theme and not hardcoded into the plugin function.
 
 /********************************************************/
 // Enqueue GMAPS API Key and store into variable
 /********************************************************/
-function ssws_enqueue_files()
-{
-    wp_enqueue_script('googleMap', '//maps.googleapis.com/maps/api/js?key=YOUR-GMAPS-API-KEY', null, '1.0', true);
+if (!function_exists('ssws_enqueue_files')) {
+    function ssws_enqueue_files()
+    {
+        wp_enqueue_script('googleMap', '//maps.googleapis.com/maps/api/js?key=YOUR-GMAPS-API-KEY', null, '1.0', true);
+    }
+    // add_action('wp_enqueue_scripts', 'ssws_enqueue_files');
 }
-// add_action('wp_enqueue_scripts', 'ssws_enqueue_files');
 
-function sswsMapKey($api)
-{
-    $api['key'] = 'YOUR-GMAPS-API-KEY';
-    return $api;
+if (!function_exists('sswsGoogleMapKey')) {
+    function sswsGoogleMapKey($api)
+    {
+        $api['key'] = 'YOUR-GMAPS-API-KEY';
+        return $api;
+    }
+    // add_filter('acf/fields/google_map/api', 'sswsGoogleMapKey');
 }
-// add_filter('acf/fields/google_map/api', 'sswsMapKey');
 // this needs to be implemented with a custom input field into WP dashboard so the GM code/snippet is unrelated to the theme and not hardcoded into the plugin function.
 
 /********************************************************/
@@ -84,36 +92,38 @@ add_filter('login_headertitle', 'SSWSLoginTitle');
 /********************************************************/
 // Automatically set the image Title, Alt-Text, Caption & Description upon upload
 /********************************************************/
-add_action('add_attachment', 'ssws_set_image_meta_upon_image_upload');
-function ssws_set_image_meta_upon_image_upload($post_ID)
-{
-    // Check if uploaded file is an image, else do nothing
+if (!function_exists('ssws_set_image_meta_upon_image_upload')) {
+    add_action('add_attachment', 'ssws_set_image_meta_upon_image_upload');
+    function ssws_set_image_meta_upon_image_upload($post_ID)
+    {
+        // Check if uploaded file is an image, else do nothing
 
-    if (wp_attachment_is_image($post_ID)) {
+        if (wp_attachment_is_image($post_ID)) {
 
-        $ssws_image_title = get_post($post_ID)->post_title;
+            $ssws_image_title = get_post($post_ID)->post_title;
 
-        // Sanitize the title:  remove hyphens, underscores & extra spaces:
-        $ssws_image_title = preg_replace('%\s*[-_\s]+\s*%', ' ', $ssws_image_title);
+            // Sanitize the title:  remove hyphens, underscores & extra spaces:
+            $ssws_image_title = preg_replace('%\s*[-_\s]+\s*%', ' ', $ssws_image_title);
 
-        // Sanitize the title:  capitalize first letter of every word (other letters lower case):
-        $ssws_image_title = ucwords(strtolower($ssws_image_title));
+            // Sanitize the title:  capitalize first letter of every word (other letters lower case):
+            $ssws_image_title = ucwords(strtolower($ssws_image_title));
 
-        // Create an array with the image meta (Title, Caption, Description) to be updated
-        // Note:  comment out the Excerpt/Caption or Content/Description lines if not needed
-        $ssws_image_meta = array(
-            'ID' => $post_ID, // Specify the image (ID) to be updated
-            'post_title' => $ssws_image_title, // Set image Title to sanitized title
-            // 'post_excerpt'    => $ssws_image_title,        // Set image Caption (Excerpt) to sanitized title
-            // 'post_content'    => $ssws_image_title,        // Set image Description (Content) to sanitized title
-        );
+            // Create an array with the image meta (Title, Caption, Description) to be updated
+            // Note:  comment out the Excerpt/Caption or Content/Description lines if not needed
+            $ssws_image_meta = array(
+                'ID' => $post_ID, // Specify the image (ID) to be updated
+                'post_title' => $ssws_image_title, // Set image Title to sanitized title
+                // 'post_excerpt'    => $ssws_image_title,        // Set image Caption (Excerpt) to sanitized title
+                // 'post_content'    => $ssws_image_title,        // Set image Description (Content) to sanitized title
+            );
 
-        // Set the image Alt-Text
-        update_post_meta($post_ID, '_wp_attachment_image_alt', $ssws_image_title);
+            // Set the image Alt-Text
+            update_post_meta($post_ID, '_wp_attachment_image_alt', $ssws_image_title);
 
-        // Set the image meta (e.g. Title, Excerpt, Content)
-        wp_update_post($ssws_image_meta);
+            // Set the image meta (e.g. Title, Excerpt, Content)
+            wp_update_post($ssws_image_meta);
 
+        }
     }
 }
 // http://brutalbusiness.com/automatically-set-the-wordpress-image-title-alt-text-other-meta/
@@ -121,12 +131,14 @@ function ssws_set_image_meta_upon_image_upload($post_ID)
 /********************************************************/
 // Allow SVG through WordPress Media Uploader
 /********************************************************/
-function ssws_mime_types($mimes)
-{
-    $mimes['svg'] = 'image/svg+xml';
-    return $mimes;
+if (!function_exists('ssws_mime_types')) {
+    function ssws_mime_types($mimes)
+    {
+        $mimes['svg'] = 'image/svg+xml';
+        return $mimes;
+    }
+    add_filter('upload_mimes', 'ssws_mime_types');
 }
-add_filter('upload_mimes', 'ssws_mime_types');
 
 /********************************************************/
 // ----------
