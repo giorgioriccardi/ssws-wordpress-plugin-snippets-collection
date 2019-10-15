@@ -6,8 +6,8 @@ This is a WordPress plugin that collects useful snippets to enhance hidden/secre
 
 ### 1. TODO list of functions and snippets with instructions
 
-- Google Analytics input field into WP dashboard (to be implemented), so the GA code/snippet is unrelated to the theme and not hardcoded into the plugin function.
-- Google Maps Key input field into WP dashboard (to be implemented), so the GM code/snippet is unrelated to the theme and not hardcoded into the plugin function.
+- Google Analytics input field into WP dashboard (to be implemented), so the GA code/snippet is unrelated to the theme and not hardcoded into the plugin function. _see googlemap plugin in the Reactive-Pro search builder plugin bundle_
+- Google Maps Key input field into WP dashboard (to be implemented), so the GM code/snippet is unrelated to the theme and not hardcoded into the plugin function. _see googlemap plugin in the Reactive-Pro search builder plugin bundle_
   - [Google Map for Contact Form 7](https://wordpress.org/plugins/cf7-google-map/)
 - Add image placeholder via js funtion for replacement of missing images or with width/height set to 0
 
